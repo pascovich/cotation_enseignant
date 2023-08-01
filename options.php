@@ -8,9 +8,9 @@ $requette=$db->prepare("SELECT * FROM options");
 $requette->execute();
 $magasin=$requette->fetchAll();
 
-// if (empty($_SESSION['user'])) {
-//   header('location:login.php');
-// }
+if (empty($_SESSION['user'])) {
+  header('location:login.php');
+}
 
 ?>
 

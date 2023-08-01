@@ -13,6 +13,10 @@ $requette2=$db->prepare("SELECT * FROM annee");
 $requette2->execute();
 $annee=$requette2->fetchAll();
 
+
+if (empty($_SESSION['user'])) {
+   header('location:login.php');
+ }
 ?>
 
 

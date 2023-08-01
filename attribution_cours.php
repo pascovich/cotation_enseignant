@@ -21,9 +21,9 @@ $requette3->execute();
 $annee=$requette3->fetchAll();
 
 
-// if (empty($_SESSION['user'])) {
-//   header('location:login.php');
-// }
+if (empty($_SESSION['user'])) {
+  header('location:login.php');
+}
 
 ?>
 

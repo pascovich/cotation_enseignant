@@ -17,6 +17,10 @@ $r4=$db->prepare("SELECT * FROM inscription");
 $r4->execute();
 $ins=$r4->fetchAll();
 
+
+if (empty($_SESSION['user'])) {
+   header('location:login.php');
+ }
 ?>
 
 
