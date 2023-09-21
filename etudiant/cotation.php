@@ -81,7 +81,7 @@ if (empty($_SESSION['user'])) {
                     <!-- DataTales Example -->
                     <div class="card shadow mb-2">
                         <div class="card-header py-3 row">
-
+                           <!--  <button type="button" name="update" id="1" class="btn btn-primary btn-xs update"><i class="fa fa-plus"> coter</button> -->
                             <h6 class="m-0 font-weight-bold text-primary col-md-10">Cotation data</h6>
                             <!-- <button type="button" id="add_cotation" data-toggle="modal" data-target="#cotationModal" class="btn btn-primary" align="rigth" class=" col-md-2">Coter</button> -->
                         </div>
@@ -96,6 +96,7 @@ if (empty($_SESSION['user'])) {
                                             <th>Enseignant</th>
                                             <th>Max</th>
                                             <th>Cote</th>
+                                            <th>Mention</th>
                                             <th>Cotation</th>
                                             
                                         </tr>
@@ -108,6 +109,7 @@ if (empty($_SESSION['user'])) {
                                             <th>Enseignant</th>
                                             <th>Max</th>
                                             <th>Cote</th>
+                                            <th>Mention</th>
                                             <th>Cotation</th>
                                         </tr>
                                     </tfoot>
@@ -173,67 +175,114 @@ if (empty($_SESSION['user'])) {
                     <form action="" method="POST" id="cotation_form" enctype="multipart/form-data" autocomplete="on">
 
                         <div class="modal-header">
-                            <h4 class="modal-title" id="myLargeModalLabel">La Cotation est sur 10 par question</h4>
+                            <h4 class="modal-title" id="myLargeModalLabel">La Cotation est sur 5 par question</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                         </div>
                         <div class="modal-body">
                             <div class="row">
-                                
-                                 <div class="col-md-6">
-                                    Ce que vous apprenez est-il utile?(UTILITE DU COURS).
-                                    <input type="number" class="form-control" min="0" max="10" name="utilite" id="utilite">
+                                <div class="col-md-4">
+                                    <label>1. RESPECT DE LA CHARGE HORAIRE.</label>
+                                    <input type="number" class="form-control" min="0" max="5" name="charge_horaire" id="charge_horaire">
                                 </div>
-                                <div class="col-md-6">
-                                    Les concepts sont-ils expliqués clairement?(EXPLICATION).
-                                    <input type="number" class="form-control" min="0" max="10" name="explication" id="explication">
+                                 <div class="col-md-4">
+                                   <label>2.DISTRIBUTION  ET LES OBJECTIFS DU COURS.</label> 
+                                    <input type="number" class="form-control" min="0" max="5" name="distribution" id="distribution">
                                 </div>
-                                
-                            </div>
-                            <div class="row">
-                                
-                                 <div class="col-md-6">
-                                    La présentation du formateur est)il stimulante?(METHODOLOGIE).
-                                    <input type="number" class="form-control" min="0" max="10" name="peda" id="peda">
-                                </div>
-                                <div class="col-md-6">
-                                    Disposez-vous suffisamment d'opportunités pour appliquer vos connaissances?(PRATIQUE).
-                                    <input type="number" class="form-control" min="0" max="10" name="pratique" id="pratique">
+                                <div class="col-md-4">
+                                     <label>3.PONCTUALITE.</label>
+                                    <input type="number" class="form-control" min="0" max="5" name="ponctualite" id="ponctualite">
                                 </div>
                                 
                             </div>
                             <div class="row">
                                 
-                                 <div class="col-md-6">
-                                    Le cours repond-il à vos attentes prevues?(PRAGMATIQUE).
-                                    <input type="number" class="form-control" min="0" max="10" name="attente" id="attente">
+                                 <div class="col-md-4">
+                                    <label>4.CONTENU DU COURS ET LES OBJECTIFS INSTITUTIONNELS.</label> 
+                                    <input type="number" class="form-control" min="0" max="5" name="contenu1" id="contenu1">
                                 </div>
-                                <div class="col-md-6">
-                                    Le formateur maitrise bien son sujet?(MAITRISER BIEN SA LECON).
-                                    <input type="number" class="form-control" min="0" max="10" name="connaissance" id="connaissance">
+                                 <div class="col-md-4">
+                                    <label>5.MAITRISE ET COMMUNICAT° DE MATIERE</label>
+                                    <input type="number" class="form-control" min="0" max="5" name="maitrise1" id="maitrise1">
+                                </div>
+                                <div class="col-md-4">
+                                    <label>6.LIEN ENTRE LE COURS ET LES TRAVAUX PRATIQUES</label>
+                                    <input type="number" class="form-control" min="0" max="5" name="lien_cours_travaux" id="lien_cours_travaux">
+                                </div>
+                                
+                            </div>
+                            <div class="row">
+                                
+                                <div class="col-md-4">
+                                    <label>7.COMMUNICATION DE LA BIBLIOGRAPHIQUE DU COURS.</label> 
+                                    <input type="number" class="form-control" min="0" max="5" name="communication" id="communication">
+                                </div>
+                                 <div class="col-md-4">
+                                    <label>8.CONTENU COURS EN Rpt AVEC LA PROFESSION</label>
+                                    <input type="number" class="form-control" min="0" max="5" name="contenu2" id="contenu2">
+                                </div>
+                                <div class="col-md-4">
+                                    <label>9. UTILISATION  DES  TIC   .</label>
+                                    <input type="number" class="form-control" min="0" max="5" name="tic" id="tic">
+                                </div>
+                                
+                            </div>
+                             <div class="row">
+                                
+                                <div class="col-md-4">
+                                    <label>10.SENS PEDAGOGIQUE ET METHODOLOGIE.</label> 
+                                    <input type="number" class="form-control" min="0" max="5" name="peda" id="peda">
+                                </div>
+                                 <div class="col-md-4">
+                                    <label>11.ORGANISATION DES INTERROGATIONS</label>
+                                    <input type="number" class="form-control" min="0" max="5" name="interro" id="interro">
+                                </div>
+                                <div class="col-md-4">
+                                    <label>12.CORRECTION D'INTERRO PENDANT LE COURS</label>
+                                    <input type="number" class="form-control" min="0" max="5" name="correction_interro" id="correction_interro">
+                                </div>
+                                
+                            </div>
+                             <div class="row">
+                                
+                                 <div class="col-md-4">
+                                    <label>13.L'EXAMEN COUVRE L'ENSEMBLE DE LA MATIERE</label> 
+                                    <input type="number" class="form-control" min="0" max="5" name="examen" id="examen">
+                                </div>
+                                 <div class="col-md-4">
+                                    <label>14.CORRECTION A TEMPS DE L'EXAMEN</label>
+                                    <input type="number" class="form-control" min="0" max="5" name="correction_examen" id="correction_examen">
+                                </div>
+                                <div class="col-md-4">
+                                    <label>15.SYLLABUS  POUR  LE  COURS</label>
+                                    <input type="number" class="form-control" min="0" max="5" name="syllabus" id="syllabus">
+                                </div>
+                                
+                            </div>
+                             <div class="row">
+                                
+                                 <div class="col-md-4">
+                                    <label>16.MAITRISE DE L'AUDITOIRE</label> 
+                                    <input type="number" class="form-control" min="0" max="5" name="maitrise" id="maitrise">
+                                </div>
+                                 <div class="col-md-4">
+                                    <label>17.SENS DE RESPONSABILITE</label>
+                                    <input type="number" class="form-control" min="0" max="5" name="responsabilite" id="responsabilite">
+                                </div>
+                                <div class="col-md-4">
+                                    <label>18.RELATIONS  COLLEGES</label>
+                                    <input type="number" class="form-control" min="0" max="5" name="relation_collegue" id="relation_collegue">
                                 </div>
                                 
                             </div>
                              <div class="row">
                                 
                                  <div class="col-md-6">
-                                    Le formateur a t-il la capacité linguistique?(LANGAGE).
-                                    <input type="number" class="form-control" min="0" max="10" name="expression" id="expression">
+                                    <label>19.RELATIONS AVEC LES ETUDIANTS</label>
+                                    <input type="number" class="form-control" min="0" max="5" name="relation_etudiant" id="relation_etudiant">
                                 </div>
                                 <div class="col-md-6">
-                                    Le formateur s'habille-t-il decemment?(HABILLEMENT).
-                                    <input type="number" class="form-control" min="0" max="10" name="habillement" id="habillement">
-                                </div>
-                                
-                            </div>
-                             <div class="row">
-                                
-                                 <div class="col-md-6">
-                                    Le formateur respecte ses rendez)vous?(PONCTUALITE & REGULARITE).
-                                    <input type="number" class="form-control" min="0" max="10" name="regularite" id="regularite">
-                                </div>
-                                <div class="col-md-6">
-                                    Autres criteres que vous voulez coter sur le formateur?(BONUS).
-                                    <input type="number" class="form-control" min="0" max="10" name="autres" id="autres">
+                                    <label>20.DISPONIBILITE AUX CONTACTS</label>
+                                    <input type="number" class="form-control" min="0" max="5" name="relation_contact" id="relation_contact">
                                 </div>
                                 
                             </div>

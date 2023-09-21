@@ -2,10 +2,12 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <!-- <div class="sidebar-brand-icon"> -->
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
+                    <!-- <img src="img/lolo.jpg" class="img-circle" width="100%" alt="image"> -->
                 </div>
-                <div class="sidebar-brand-text mx-3">COTATION SYSTEM <sup>1</sup></div>
+                <div class="sidebar-brand-text mx-3">COTATION SYSTEM <sup>v1</sup></div>
             </a>
 
             <!-- Divider -->
@@ -108,9 +110,10 @@
 
             <!-- Sidebar Message -->
             <div class="sidebar-card d-none d-lg-flex">
-                <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
+            <img src="img/lolo.jpg" class="img-circle" width="100%" alt="image">
+                <!-- <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
                 <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
-                <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
+                <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a> -->
             </div>
 
         </ul>

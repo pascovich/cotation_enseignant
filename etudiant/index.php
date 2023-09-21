@@ -8,8 +8,8 @@ $requette=$db->prepare("SELECT * FROM auth_etudiant_view limit 1 ");
 $requette->execute();
 $opt=$requette->fetchAll();
 
-$r=$db->prepare("SELECT * FROM tri_cotation ");
-$r->execute();
+$r=$db->prepare("SELECT * FROM tri_cotation where id_inscription=:id ");
+$r->execute(['id' => $_SESSION['user']['id']]);
 $rr=$r->fetchAll();
 
 $requette1=$db->prepare("SELECT * FROM etudiant");

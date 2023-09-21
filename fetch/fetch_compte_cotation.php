@@ -31,8 +31,27 @@ foreach($result as $row)
 	$sub_array[] = $row["maxs"];
 	if(($row["id_inscription"]==$_SESSION['user']['id']) AND ($row["maxs"] !=null)){
 		$sub_array[] = $row["cote"];
+		if($row["cote"]>=0 && $row["cote"]<=20){
+			$sub_array[]="MA";
+
+		}
+		elseif($row["cote"]>=21 && $row["cote"]<=40){
+			$sub_array[]="M";
+
+		}
+		elseif($row["cote"]>=41 && $row["cote"]<=60){
+			$sub_array[]="B";
+
+		}
+		elseif($row["cote"]>=60 && $row["cote"]<=80){
+			$sub_array[]="TB";
+
+		}else{
+			$sub_array[]="E";
+		}
 
 	}else{
+		$sub_array[] = ".....";
 		$sub_array[] = ".....";
 		$sub_array[] = '<button type="button" name="update" id="'.$row["id"].'" class="btn btn-primary btn-xs update"><i class="fa fa-plus"> coter</button>';
 	}

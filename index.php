@@ -176,7 +176,7 @@ if (empty($_SESSION['user'])) {
                                     
                                 </div>
                                 <div class="card-body">
-                                    <form method="post" id="form1" action="print/cotation_cours.php" target="framename">
+                                    <form method="post" id="form1" action="print/cotation_cours2.php" target="framename">
                                     <div class="group">
                                          <h4 class="small font-weight-bold">Selectionne la Promotion&Option 
                                         <!-- <span class="float-right"></span> -->
